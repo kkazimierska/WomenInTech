@@ -21,6 +21,5 @@ class WindFarmSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = WindFarm
-        fields = ["name", "farm_type", "localisation", "wind_turbines"]
-    
-    
+        fields = ["id", "name", "farm_type", "localisation", "wind_turbines"]
+
