@@ -12,4 +12,5 @@ if __name__ == "__main__":
     # rc == 0 success
     # rc == 1 no replay
     # rc == 2 unknown host
+    print(rc)
     print(output)

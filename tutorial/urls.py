@@ -17,9 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
-from windfarms.views import router
+from windfarms.views import ping_windfarm, router
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include(router.urls))
+    path('api/', include(router.urls)),
+    path('ping/', ping_windfarm)
 ]
