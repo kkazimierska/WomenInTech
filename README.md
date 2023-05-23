@@ -1,4 +1,9 @@
-Run docker with
+Start docker
 ```
-docker compose up
+docker compose up -d
+```
+
+Run migrations
+```
+docker compose exec web python manage.py migrate
 ```
