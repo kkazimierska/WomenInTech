@@ -1,0 +1,79 @@
+.carousel-wrapper {
+    width: 80%;
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+}
+
+.windfarm-card {
+    border: 1px solid #dadada;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 0;
+    height: 440px;
+    opacity: 30%;
+    background-color: rgb(169, 169, 169);
+}
+
+.windfarm-card img {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.car-buttons {
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.windfarm-details {
+    padding: 0.5rem;
+    vertical-align:middle;
+}
+
+.windfarm-card:hover {
+    opacity: 100;
+    cursor: pointer;
+    transition: 0.7s;
+
+}
+
+.active {
+    border: 3px solid #00bbff;
+    opacity: 100%;
+    background-color: white;
+    cursor: pointer;
+    transition: 0.1s;
+    -webkit-transform:scale(1.05);
+    -moz-transform:scale(1.05);
+    -o-transform:scale(1.05);
+    transform:scale(1.05);
+    z-index: 100;
+}
+
+.windfarm-actions {
+    float: right;
+}
+
+.windfarm-actions p-button {
+    margin: 5px;
+}
+
+.windfarm-details p {
+    font-size: 30px;
+    margin: 0;
+    text-align: center;
+}
+
+
+.windfarm-details h2{
+    text-align: center;
+    margin: 0;
+}
+
+.windfarm-details span {
+    text-align: center;
+    font-size: 50px !important;
+
+}

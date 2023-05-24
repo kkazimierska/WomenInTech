@@ -1,0 +1,31 @@
+<p-toast position="bottom-center"></p-toast>
+<div class="progress-spinner" *ngIf="isLoading(); else WindfarmsAvailable">
+    <p-progressSpinner></p-progressSpinner>
+</div>
+
+<ng-template #WindfarmsAvailable>
+<div class="carousel-wrapper">
+<p-carousel [value]="windfarms" [numVisible]="3" [numScroll]="3" [circular]="false" [responsiveOptions]="responsiveOptions">
+    <ng-template let-windfarm pTemplate="item">
+        <div class="windfarm-card" (click)="windfarmClicked(windfarm.id)" [ngClass]="{'active' : windfarm.id == selectedWindfarmId}">
+        <div class="border-1 surface-border border-round m-2 text-center py-5 px-3">
+            <div class="mb-3">
+                <img src="./assets/img/wind_{{ windfarm.id }}.jpg" [alt]="windfarm.name" class="w-6 shadow-2"/>
+            </div>
+            <div class="windfarm-details">
+                <div class="windfarm-actions">
+                    <p-button type="button" styleClass="p-button p-button-rounded mr-2" icon="pi pi-sync" (click)="refreshWindfarm(windfarm.id)"></p-button>
+                    <p-button type="button" styleClass="p-button-success p-button-rounded mr-2" icon="pi pi-phone" (click)="fixAllTurbines(windfarm.id)"></p-button>
+                </div>
+                <h3 class="mb-1">{{ windfarm.name }}</h3>
+                <h2 class="mt-0 mb-3">Energy Produced:</h2>
+                <p>{{ windfarm.power }}MWh</p>
+                <!-- <p><p-tag size="large" [value]="windfarm.status" [severity]="getSeverity(windfarm.status)"></p-tag></p> -->
+            </div>
+        </div>
+    </div>
+    </ng-template>
+</p-carousel>
+<p-divider></p-divider>
+</div>
+</ng-template>

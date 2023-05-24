@@ -1,0 +1,33 @@
+<div class="card">
+    <div class="progress-spinner" *ngIf="!turbines?.length && selectedWindfarmId; else TurbinesAvailable">
+        <p-progressSpinner></p-progressSpinner>
+    </div>
+</div>
+
+
+
+<ng-template #TurbinesAvailable>
+    <p-table [value]="turbines" [tableStyle]="{ 'min-width': '50rem' }">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>id</th>
+                <th>power</th>
+                <th>workingTime</th>
+                <th>status</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-turbine>
+            <tr>
+                <td>{{ turbine.id }}</td>
+                <td>{{ turbine.energy_produced }}</td>
+                <td>{{ turbine.working_time }}</td>
+                <td>
+                    <p-button *ngIf="turbine.status == 'OFFLINE'" type="button" styleClass="p-button-danger p-button-rounded" icon="pi pi-play" (click)="switchTurbine(turbine.id)"></p-button>
+                    <p-button *ngIf="turbine.status == 'ONLINE'" type="button" styleClass="p-button-success p-button-rounded" icon="pi pi-pause" (click)="switchTurbine(turbine.id)"></p-button>
+                    <p-button *ngIf="turbine.status == 'UNKNOWN'" type="button" styleClass="p-button-info p-button-rounded" icon="pi pi-question" (click)="switchTurbine(turbine.id)"></p-button>
+
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+</ng-template>
