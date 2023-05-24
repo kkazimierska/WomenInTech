@@ -11,7 +11,7 @@ services:
     build: .
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
-      - .:/code
+      - .:/app
     ports:
       - "8000:8000"
     environment:
@@ -21,3 +21,10 @@ services:
       - DOCKER=1
     depends_on:
       - db
+  frontend:
+    build: ./frontend
+    volumes:
+      - ./frontend:/app
+    ports:
+      - "4200:4200"
+

@@ -1,0 +1,30 @@
+.container { margin-left: auto; margin-right: auto; }
+@media only screen and (max-width: 767px) { .container { max-width: 100%; } }
+@media only screen and (min-width: 768px) { .container { max-width: 740px; } }
+@media only screen and (min-width: 992px) { .container { max-width: 980px; } }
+@media only screen and (min-width: 1200px) { .container { max-width: 1140px; } }
+@media only screen and (min-width: 1400px) { .container { max-width: 1320px; } }
+
+.container {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+    background-color: white;
+    border-color: #495057;
+    border: #495057 5px;
+}
+
+.card {
+    background: var(--surface-card);
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    margin:50%;
+}
+
+.header {
+    font-weight: bold;
+    font-size: 50px;
+    text-align: center;
+    background-color: rgb(46, 146, 189);
+    color: white;
+}

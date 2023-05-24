@@ -1,0 +1,27 @@
+You can add global styles to this file, and also import other style files
+* {
+    margin: 0;
+    padding: 0;
+}
+html {
+    font-size: 14px;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    font-family: var(--font-family);
+    font-weight: normal;
+    background: var(--surface-ground);
+    color: var(--text-color);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.progress-spinner {
+    width: 1em;
+    margin: auto;
+}
