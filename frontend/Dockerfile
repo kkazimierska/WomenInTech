@@ -1,9 +1,16 @@
-FROM node:20-alpine
-WORKDIR /app
-RUN npm install -g @angular/cli
-COPY package*.json ./
-RUN npm install
+# Step 1: Build the app in image 'builder'
+FROM node:12.8-alpine AS builder
+
+WORKDIR /usr/src/app
+COPY package*.json .
+RUN npm && npm install
 COPY . .
-RUN npm run build
-EXPOSE 4200
-CMD ng serve --host 0.0.0.0
+
+# Step 2: Use build output from 'builder'
+FROM nginx:stable-alpine
+LABEL version="1.0"
+
+COPY nginx.conf /etc/nginx/nginx.conf
+
+WORKDIR /usr/share/nginx/html
+COPY --from=builder /usr/src/app/dist/my-angular-app/ .

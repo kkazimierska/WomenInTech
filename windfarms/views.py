@@ -1,10 +1,11 @@
-from django.shortcuts import render
-from django.urls import include, path
+import subprocess
+
 from rest_framework import routers, viewsets
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
 
 from windfarms.models import WindFarm, WindTurbine
 from windfarms.serializer import WindFarmSerializer, WindTurbineSerializer
-import subprocess
 
 # Create your views here.
 
@@ -17,8 +18,6 @@ class WindTurbineViewset(viewsets.ModelViewSet):
 
     queryset = WindTurbine.objects.all()
     serializer_class = WindTurbineSerializer
-from rest_framework.decorators import api_view
-from rest_framework.response import Response
 
 def ping_host(host: str) -> WindTurbine.WindTurbineStatus:
 

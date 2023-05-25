@@ -2,7 +2,7 @@ services:
   db:
     image: postgres
     volumes:
-      - ./data/db:/var/lib/postgresql/data
+      - postgres:/var/lib/postgresql/data
     environment:
       - POSTGRES_DB=postgres
       - POSTGRES_USER=postgres
@@ -27,4 +27,5 @@ services:
       - ./frontend:/app
     ports:
       - "4200:4200"
-
+volumes:
+  postgres:
