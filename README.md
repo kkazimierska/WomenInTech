@@ -1,3 +1,7 @@
+Clone the repo
+```
+git clone 
+```
 Start docker
 ```
 docker compose up -d
