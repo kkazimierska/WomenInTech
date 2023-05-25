@@ -15,7 +15,7 @@ Start docker
 ```
 docker compose up -d
 ```
-OR 
+in case of problems try 
 ```
 sudo docker compose -d
 ```
