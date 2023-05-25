@@ -15,6 +15,10 @@ Start docker
 ```
 docker compose up -d
 ```
+OR 
+```
+sudo docker compose -d
+```
 
 Run migrations
 ```
