@@ -14,10 +14,15 @@ class WindFarmViewset(viewsets.ModelViewSet):
     queryset = WindFarm.objects.all()
     serializer_class = WindFarmSerializer
 
-class WindTurbineViewset(viewsets.ModelViewSet):
+class WindTurbineViewset(viewsets.ViewSet):
 
-    queryset = WindTurbine.objects.all()
-    serializer_class = WindTurbineSerializer
+    # queryset = WindTurbine.objects.all()
+    # serializer_class = WindTurbineSerializer
+    def list(self, request):
+         windfarm_id = self.request.query_params.get('windfarm_id')
+         queryset = WindTurbine.objects.filter(windfarm=windfarm_id)
+         output_serializer = WindTurbineSerializer(queryset, many=True)
+         return Response(output_serializer.data)
 
 def ping_host(host: str) -> WindTurbine.WindTurbineStatus:
 
@@ -49,4 +54,4 @@ def ping_windfarm(request):
 
 router = routers.DefaultRouter()
 router.register(r'wind_farms', WindFarmViewset)
-router.register(r'wind_turbines', WindTurbineViewset)
+router.register(r'wind_turbines', WindTurbineViewset, basename = 'wind_turbines')

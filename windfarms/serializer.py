@@ -17,9 +17,10 @@ class WindTurbineSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class WindFarmSerializer(serializers.ModelSerializer):
-    wind_turbines = WindTurbineSerializer(read_only=True, many=True)
+    # wind_turbines = WindTurbineSerializer(read_only=True, many=True)
 
     class Meta:
         model = WindFarm
-        fields = ["id", "name", "farm_type", "localisation", "wind_turbines"]
+        # fields = ["id", "name", "farm_type", "localisation", "wind_turbines"]
+        fields = ["id", "name", "farm_type", "localisation"]
 
