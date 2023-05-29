@@ -17,10 +17,17 @@ class WindTurbineSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class WindFarmSerializer(serializers.ModelSerializer):
-    # wind_turbines = WindTurbineSerializer(read_only=True, many=True)
 
     class Meta:
         model = WindFarm
-        # fields = ["id", "name", "farm_type", "localisation", "wind_turbines"]
         fields = ["id", "name", "farm_type", "localisation"]
+
+    def validate(self, data):
+        """
+        Check that the name field is without numbers.
+        """
+        condition = any(char.isdigit() for char in data['name'])
+        if condition:
+            raise serializers.ValidationError({"name": "Windfarm name can not contain numbers."})
+        return data
 
