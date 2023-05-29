@@ -26,6 +26,6 @@ services:
     volumes:
       - ./frontend:/app
     ports:
-      - "4200:4200"
+      - "4200:80"
 volumes:
   postgres:
