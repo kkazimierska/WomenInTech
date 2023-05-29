@@ -1,16 +1,19 @@
-# Step 1: Build the app in image 'builder'
-FROM node:18-alpine AS builder
+# Stage 0, "build-stage", based on Node.js, to build and compile the frontend
+FROM node:18 as build-stage
 
-WORKDIR /usr/src/app
-COPY package*.json .
-RUN npm && npm install
-COPY . .
+WORKDIR /app
 
-# Step 2: Use build output from 'builder'
-FROM nginx:stable-alpine
-LABEL version="1.0"
+COPY package*.json /app/
 
-COPY nginx.conf /etc/nginx/nginx.conf
+RUN npm install
 
-WORKDIR /usr/share/nginx/html
-COPY --from=builder /usr/src/app/dist/my-angular-app/ .
+COPY ./ /app/
+
+
+RUN npm run build
+
+
+# Stage 1, based on Nginx, to have only the compiled app, ready for production with Nginx
+FROM nginx:1.15
+
+COPY --from=build-stage /app/dist/ /usr/share/nginx/html
