@@ -1,0 +1,90 @@
+[
+  {
+    "model": "windfarms.WindTurbine",
+    "pk": 1,
+    "fields": {
+      "status": "online",
+      "host": "209.85.231.104",
+      "energy_produced": "159",
+      "working_time": "23",
+      "windfarm": 1
+    }
+  },
+  {
+    "model": "windfarms.WindTurbine",
+    "pk": 2,
+    "fields": {
+      "status": "online",
+      "host": "207.46.170.123",
+      "energy_produced": "159",
+      "working_time": "23",
+      "windfarm": 1
+    }
+  },
+  {
+    "model": "windfarms.WindTurbine",
+    "pk": 3,
+    "fields": {
+      "status": "online",
+      "host": "72.30.2.43",
+      "energy_produced": "58",
+      "working_time": "14",
+      "windfarm": 2
+    }
+  },
+  {
+    "model": "windfarms.WindTurbine",
+    "pk": 4,
+    "fields": {
+      "status": "online",
+      "host": "66.220.149.25",
+      "energy_produced": "110",
+      "working_time": "4",
+      "windfarm": 2
+    }
+  },
+  {
+    "model": "windfarms.WindTurbine",
+    "pk": 5,
+    "fields": {
+      "status": "online",
+      "host": "208.80.152.2",
+      "energy_produced": "99",
+      "working_time": "21",
+      "windfarm": 3
+    }
+  },
+  {
+    "model": "windfarms.WindTurbine",
+    "pk": 6,
+    "fields": {
+      "status": "online",
+      "host": "143.166.83.38",
+      "energy_produced": "59",
+      "working_time": "43",
+      "windfarm": 4
+    }
+  },
+  {
+    "model": "windfarms.WindTurbine",
+    "pk": 7,
+    "fields": {
+      "status": "online",
+      "host": "128.242.245.116",
+      "energy_produced": "120",
+      "working_time": "56",
+      "windfarm": 5
+    }
+  },
+  {
+    "model": "windfarms.WindTurbine",
+    "pk": 8,
+    "fields": {
+      "status": "online",
+      "host": "28.242.245.116",
+      "energy_produced": "568",
+      "working_time": "84",
+      "windfarm": 5
+    }
+  }
+]

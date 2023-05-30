@@ -1,0 +1,49 @@
+[
+    {
+      "model": "windfarms.WindFarm",
+      "pk": 1,
+      "fields": {
+        "name":"Aigol",
+        "farm_type":"offshore",
+        "localisation":"United Kingdom"
+      }
+    },
+    {
+      "model": "windfarms.WindFarm",
+      "pk": 2,
+      "fields": {
+        "name":"Grossecen",
+        "farm_type":"onshore",
+        "localisation":"Germany"
+      }
+    },
+    {
+      "model": "windfarms.WindFarm",
+      "pk": 3,
+      "fields": {
+        "name":"Ulmnion",
+        "farm_type":"offshore",
+        "localisation":"Germany"
+      }
+    },
+    {
+      "model": "windfarms.WindFarm",
+      "pk": 4,
+      "fields": {
+        "name":"Vooamesrest ",
+        "farm_type":"offshore",
+        "localisation":"Denmark"
+      }
+    },
+    {
+      "model": "windfarms.WindFarm",
+      "pk": 5,
+      "fields": {
+        "name":"Singablesread",
+        "farm_type":"offshore",
+        "localisation":"Denmark"
+      }
+    }
+]
+
+
