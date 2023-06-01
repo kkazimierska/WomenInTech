@@ -5,7 +5,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
 from windfarms.models import WindFarm, WindTurbine
-from windfarms.serializer import WindFarmSerializer, WindTurbineSerializer
+from windfarms.serializer import WindFarmSerializer, WindTurbineSerializer, WindFarmPingSerializer
 
 # Create your views here.
 
@@ -49,7 +49,7 @@ def ping_windfarm(request):
         wt.status = status
         wt.save()
     windfarm  = WindFarm.objects.get(id=windfarm_id)
-    windfarm = WindFarmSerializer(windfarm)
+    windfarm = WindFarmPingSerializer(windfarm)
     return Response(windfarm.data)
 
 router = routers.DefaultRouter()
