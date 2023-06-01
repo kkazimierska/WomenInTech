@@ -18,7 +18,9 @@ git clone git@github.com:kkazimierska/WomenInTech.git
 
 Start docker
 
+
 ```
+docker compose build
 docker compose up -d
 ```
 
