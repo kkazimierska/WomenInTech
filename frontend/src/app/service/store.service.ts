@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { IAppStore, Turbine, Windfarm } from '../domain/models';
+import { IAppStore, Turbine, Windfarm, PingResponse } from '../domain/models';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 @Injectable({
@@ -83,25 +83,18 @@ export class StoreService {
     return windfarm;
   }
 
-  switchTurbine(turbineId: number) {
-    const turbine = this.getTurbineById(turbineId);
-    const currentStatus = turbine?.status
-    if (currentStatus == "offline"){
-      turbine.status = "online";
-    }else{
-      turbine.status = "offline";
-    }
+  pingAllTurbines(windfarmId: number){
+    this.store.turbines.map(turbine => turbine.status = "unknown");
     this.emit(this.store);
-  }
-
-  fixAllTurbines(windfarmId: number){
-    this.store.turbines.map(
-      turbine => {
-        if (turbine.windfarm == windfarmId){
-          turbine.status = "online";
+    this.http.get<PingResponse>(`http://127.0.0.1:8000/ping/?windfarm_id=${windfarmId}`)
+    .subscribe(
+        data => {
+          this.store.turbines = data.wind_turbines;
+          this.calculateWindfarmPower(this.store.selectedWindfarmId);
+          this.checkWindfarmStatus(this.store.selectedWindfarmId);
+          this.emit(this.store);
         }
-      }
-    )
+      )
     this.emit(this.store);
   }
 

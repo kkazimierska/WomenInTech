@@ -26,10 +26,4 @@ export class WindTurbineListComponent implements OnInit{
       }
     )
   }
-
-  switchTurbine(turbineId: number){
-    this.storeService.switchTurbine(turbineId);
-  }
-
-
 }

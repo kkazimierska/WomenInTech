@@ -20,4 +20,8 @@ export interface IAppStore {
     turbines: Turbine[];
 }
 
+export interface PingResponse{
+    wind_turbines: Turbine[]
+}
+
 export type Status = "online" | "offline" | "unknown"

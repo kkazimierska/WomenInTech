@@ -61,9 +61,10 @@ export class WindFarmListComponent implements OnInit{
     return !this.windfarms;
   }
 
-fixAllTurbines(windfarmId: number){
-  this.storeService.fixAllTurbines(windfarmId);
-  this.messageService.add({ severity: 'info', summary: 'Success', detail: 'All turbines have been fixed' });
+pingAllTurbines(windfarmId: number){
+  this.messageService.add({ severity: 'info', summary: 'In progress...', detail: `Turbines for windfarm with id: ${windfarmId} are being pinged...` });
+  this.storeService.pingAllTurbines(windfarmId);
+
 }
 
 
