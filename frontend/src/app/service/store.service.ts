@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import { IAppStore, Turbine, Windfarm, Status } from '../domain/models';
-import { BehaviorSubject, Observable, delay, map, of } from 'rxjs';
-import { turbineData, windfarmData } from './data';
+import { IAppStore, Turbine, Windfarm } from '../domain/models';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
@@ -40,22 +39,8 @@ export class StoreService {
     }
 
   getTurbineData(windfarmId: number) {
-    this.http.get<any[]>(`http://127.0.0.1:8000/api/wind_turbines?windfarm_id=${windfarmId}`).pipe(
-        map(
-          turbineList => turbineList.map(
-            turbine => {
-              if (turbine.status == "ONLINE") {
-                turbine.status = Status.ONLINE
-              } else if(turbine.status == "OFFLINE") {
-                turbine.status = Status.OFFLINE
-              }
-              else {
-                turbine.status = Status.UNKNOWN
-              }
-              return turbine
-            })
-        )
-      ).subscribe(
+    this.http.get<any[]>(`http://127.0.0.1:8000/api/wind_turbines?windfarm_id=${windfarmId}`)
+    .subscribe(
         turbines => {
           this.store.turbines = turbines;
           this.calculateWindfarmPower(this.store.selectedWindfarmId);
@@ -76,12 +61,12 @@ export class StoreService {
 
   private checkWindfarmStatus(windfarmId: number) {
     const windfarm = this.getWindfarmById(windfarmId);
-    let faulty = this.store.turbines.find(turbine => turbine.status == Status.OFFLINE);
+    let faulty = this.store.turbines.find(turbine => turbine.status == "offline");
     if (faulty){
-      windfarm.status = Status.OFFLINE
+      windfarm.status = "offline"
     }
     else{
-      windfarm.status = Status.ONLINE
+      windfarm.status = "online"
     }
   }
 
@@ -101,10 +86,10 @@ export class StoreService {
   switchTurbine(turbineId: number) {
     const turbine = this.getTurbineById(turbineId);
     const currentStatus = turbine?.status
-    if (currentStatus == Status.OFFLINE){
-      turbine.status = Status.ONLINE;
+    if (currentStatus == "offline"){
+      turbine.status = "online";
     }else{
-      turbine.status = Status.OFFLINE;
+      turbine.status = "offline";
     }
     this.emit(this.store);
   }
@@ -113,7 +98,7 @@ export class StoreService {
     this.store.turbines.map(
       turbine => {
         if (turbine.windfarm == windfarmId){
-          turbine.status = Status.ONLINE;
+          turbine.status = "online";
         }
       }
     )

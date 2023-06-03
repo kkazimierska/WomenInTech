@@ -2,14 +2,14 @@ export interface Windfarm {
     id?: number;
     name?: string;
     power?: number;
-    status?: string;
+    status?: Status;
 }
 
 export interface Turbine {
     id: number;
     energy_produced: number;
     working_time: number;
-    status: string;
+    status: Status;
     windfarm: number;
     host: string;
 }
@@ -20,9 +20,4 @@ export interface IAppStore {
     turbines: Turbine[];
 }
 
-
-export enum Status {
-    ONLINE = "ONLINE",
-    OFFLINE = "OFFLINE",
-    UNKNOWN = "UNKNOWN"
-  }
+export type Status = "online" | "offline" | "unknown"

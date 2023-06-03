@@ -46,11 +46,11 @@ export class WindFarmListComponent implements OnInit{
 
   getSeverity(status: Status) {
     switch (status) {
-        case Status.ONLINE:
+        case "online":
             return 'success';
-        case Status.OFFLINE:
+        case "offline":
             return 'danger';
-        case Status.UNKNOWN:
+        case "unknown":
             return 'info';
         default:
           throw new Error("status unknown!");
