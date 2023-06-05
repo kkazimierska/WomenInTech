@@ -22,10 +22,9 @@
                 <td>{{ turbine.energy_produced }}</td>
                 <td>{{ turbine.working_time }}</td>
                 <td>
-                    <p-button *ngIf="turbine.status == 'OFFLINE'" type="button" styleClass="p-button-danger p-button-rounded" icon="pi pi-play" (click)="switchTurbine(turbine.id)"></p-button>
-                    <p-button *ngIf="turbine.status == 'ONLINE'" type="button" styleClass="p-button-success p-button-rounded" icon="pi pi-pause" (click)="switchTurbine(turbine.id)"></p-button>
-                    <p-button *ngIf="turbine.status == 'UNKNOWN'" type="button" styleClass="p-button-info p-button-rounded" icon="pi pi-question" (click)="switchTurbine(turbine.id)"></p-button>
-
+                    <p-tag *ngIf="turbine.status == 'online'" severity="success" value="Online"></p-tag>
+                    <p-tag *ngIf="turbine.status == 'offline'" severity="danger" value="Offline"></p-tag>
+                    <p-tag *ngIf="turbine.status == 'unknown'" severity="info" value="Unknown"></p-tag>
                 </td>
             </tr>
         </ng-template>
