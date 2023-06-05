@@ -1,3 +1,9 @@
+Install if you do not have Git
+
+```
+https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+```
+
 Open Docker desktop if on Windows
 
 ```
