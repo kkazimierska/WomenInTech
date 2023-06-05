@@ -33,12 +33,12 @@ sudo docker compose -d
 Run migrations
 
 ```
-docker compose exec web python manage.py migrate
+docker compose exec web python backend/manage.py migrate
 ```
 
 Populate Database with sample objects
 
 ```
-docker compose exec web python manage.py loaddata /app/windfarms/fixtures/windFarms.json
-docker compose exec web python manage.py loaddata /app/windfarms/fixtures/windTurbines.json
+docker compose exec web python backend/manage.py loaddata /app/windfarms/fixtures/windFarms.json
+docker compose exec web python backend/manage.py loaddata /app/windfarms/fixtures/windTurbines.json
 ```
