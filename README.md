@@ -40,6 +40,8 @@ Populate Database with sample objects
 
 ```
 docker compose exec web python backend/manage.py loaddata /app/backend/windfarms/fixtures/windFarms.json
+```
+```
 docker compose exec web python backend/manage.py loaddata /app/backend/windfarms/fixtures/windTurbines.json
 ```
 Go to MURAL to follow the workshop process
