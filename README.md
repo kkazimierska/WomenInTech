@@ -39,6 +39,6 @@ docker compose exec web python backend/manage.py migrate
 Populate Database with sample objects
 
 ```
-docker compose exec web python backend/manage.py loaddata /app/windfarms/fixtures/windFarms.json
-docker compose exec web python backend/manage.py loaddata /app/windfarms/fixtures/windTurbines.json
+docker compose exec web python backend/manage.py loaddata /app/backend/windfarms/fixtures/windFarms.json
+docker compose exec web python backend/manage.py loaddata /app/backend/windfarms/fixtures/windTurbines.json
 ```
