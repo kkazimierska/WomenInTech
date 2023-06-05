@@ -13,7 +13,7 @@ Open terminal and install Docker
 Clone the repo
 
 ```
-git clone git@github.com:kkazimierska/WomenInTech.git
+git clone https://github.com/kkazimierska/WomenInTech.git
 ```
 
 Start docker
