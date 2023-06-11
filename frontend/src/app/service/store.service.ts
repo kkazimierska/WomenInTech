@@ -50,13 +50,12 @@ export class StoreService {
       )
     }
   private calculateWindfarmPower(windfarmId: number) {
-    const windfarm = this.getWindfarmById(windfarmId);
-    let powerProduced = this.store.turbines.reduce(
-      (acc, obj) => acc + obj.energy_produced,
-      0
-    );
-
-    windfarm.power = powerProduced
+    /**
+     * TODO: Given a windfarmId, this method should set value of power
+     * to be equal to sum of energy_produced by all turbines associated with it.
+     * 
+     * Hint: Take a look at test implementation inside store.service.spec.ts file.
+     */
   }
 
   private checkWindfarmStatus(windfarmId: number) {
