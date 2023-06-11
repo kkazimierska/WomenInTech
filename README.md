@@ -58,3 +58,8 @@ Close containers
 ```
 docker compose down -v
 ```
+
+Running frontend tests:
+```
+docker compose exec frontend npm run test-headless
+```
