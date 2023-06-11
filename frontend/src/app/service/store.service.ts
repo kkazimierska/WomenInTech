@@ -70,7 +70,6 @@ export class StoreService {
     }
   }
 
-
   private getTurbineById(turbineId: number): Turbine {
     const turbine = this.store.turbines.find(turbine => turbine.id == turbineId);
     if (!turbine){ throw new Error('Turbine not found!'); }
