@@ -5,15 +5,15 @@ https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 ```
 
 Open Docker desktop if on Windows
+Zainstaluj, jesli nie masz  Docker
 
 ```
 https://docs.docker.com/desktop/install/windows-install/
 ```
 
-Open terminal and install Docker
-
+Zainstaluj Visual Studio  Code, jesli nie masz
 ```
-"Docker Desktop Installer.exe" install
+https://code.visualstudio.com/download
 ```
 
 Clone the repo
