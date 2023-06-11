@@ -8,6 +8,10 @@
 
 <ng-template #TurbinesAvailable>
     <p-table [value]="turbines" [tableStyle]="{ 'min-width': '50rem' }">
+        <!-- We're using a PrimeNg table component here.
+                For reference check:
+                https://primeng.org/table
+        -->
         <ng-template pTemplate="header">
             <tr>
                 <th>id</th>
@@ -16,15 +20,29 @@
                 <th>status</th>
             </tr>
         </ng-template>
-        <ng-template pTemplate="body" let-turbine>
+        <ng-template pTemplate="body" let-turbine> 
             <tr>
-                <td>{{ turbine.id }}</td>
-                <td>{{ turbine.energy_produced }}</td>
-                <td>{{ turbine.working_time }}</td>
+                <td>id</td>
+                <td>energy_produced</td>
+                <td>working_time</td>
                 <td>
-                    <p-tag *ngIf="turbine.status == 'online'" severity="success" value="Online"></p-tag>
-                    <p-tag *ngIf="turbine.status == 'offline'" severity="danger" value="Offline"></p-tag>
-                    <p-tag *ngIf="turbine.status == 'unknown'" severity="info" value="Unknown"></p-tag>
+                    <!-- Use <p-tag> component to display status information
+                    For reference check:
+                    https://primeng.org/tag
+                    
+                    Remember: In our model we can have one of the three values: 
+                    - 'online' 
+                    - 'offline'
+                    - 'unknown'
+
+                    For colors you can use:
+                    success if status == online
+                    danger if status == offline
+                    info if status == unknown
+                    
+                    Hint: Use *ngIf directive
+                    https://angular.io/api/common/NgIf
+                    -->
                 </td>
             </tr>
         </ng-template>
