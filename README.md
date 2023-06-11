@@ -8,7 +8,7 @@ Open Docker desktop if on Windows
 Zainstaluj, jesli nie masz  Docker
 
 ```
-https://docs.docker.com/desktop/install/windows-install/
+https://docs.docker.com/desktop/install/ 
 ```
 
 Zainstaluj Visual Studio  Code, jesli nie masz
