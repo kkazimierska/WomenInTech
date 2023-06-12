@@ -13,9 +13,9 @@ Fields are specified by class `django.db.models.Model.` attributes.
 - `working_time` as `IntegerField` attribute of `models` class with parameter `null=False`.
 - `windfarm` as `ForeignKey` attribute of `models` class.
 `ForeignKey` A many-to-one relationship.
-Requires two positional arguments: the class to which the model (`WindFarm`) is related 
+Requires two positional arguments: the class to which the model (`WindFarm`) is related
 and the `on_delete` option.
-Set `on_delete` to `CASCADE` attribute of `models` class.
+Set `on_delete` to `models.CASCADE`.
 Cascade deletes. Django emulates the behavior of the SQL constraint ON DELETE CASCADE
 and also deletes the object containing the ForeignKey.
 
@@ -31,3 +31,5 @@ with specified parameters
 `null=False`.
 4. Define internal method `__str__` of `WindTurbine` model
 to return `Wind turbine {self.pk}`.
+
+5. Commit all changes.
