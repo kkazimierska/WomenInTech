@@ -19,26 +19,3 @@ class WindFarm(models.Model):
     def __str__(self):
         return self.name
 
-class WindTurbine(models.Model):
-    class WindTurbineStatus(models.TextChoices):
-        ONLINE = 'online', _('Online')
-        OFFLINE = 'offline', _('Offline')
-        UNKNOWN = 'unknown', _('Unknwon')
-
-    status = models.CharField(
-        max_length=8,
-        choices=WindTurbineStatus.choices,
-        default=WindTurbineStatus.UNKNOWN,
-        null=False
-    )
-
-    host = models.GenericIPAddressField(null=False)
-    energy_produced = models.IntegerField(null=False)
-    working_time = models.IntegerField(null=False)
-    windfarm = models.ForeignKey(WindFarm, on_delete=models.CASCADE, related_name="wind_turbines")
-
-
-    def __str__(self):
-        return f"Wind turbine {self.pk}"
-
-
