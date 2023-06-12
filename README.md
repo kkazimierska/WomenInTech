@@ -4,8 +4,7 @@ Install Git
 https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 ```
 
-Install Docker
-Open Docker desktop if on Windows
+Install Docker and Open Docker desktop if on Windows
 
 
 ```
