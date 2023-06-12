@@ -32,4 +32,6 @@ with specified parameters
 4. Define internal method `__str__` of `WindTurbine` model
 to return `Wind turbine {self.pk}`.
 
-5. Commit all changes.
+5. Save work `git commit -a -m "finish task1"`.
+
+6. Go to task 2: `git checkout task2`.
