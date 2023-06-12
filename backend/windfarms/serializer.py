@@ -1,5 +1,4 @@
 from rest_framework import serializers
-
 from windfarms.models import WindFarm, WindTurbine
 
 
@@ -16,20 +15,18 @@ class WindTurbineSerializer(serializers.ModelSerializer):
         model = WindTurbine
         fields = '__all__'
 
-class WindFarmSerializer(serializers.ModelSerializer):
+class WindTurbineSerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = WindFarm
-        fields = ["id", "name", "farm_type", "localisation"]
+        model = WindTurbine
+        fields = '__all__'
 
-    def validate(self, data):
-        """
-        Check that the name field is without numbers.
-        """
-        condition = any(char.isdigit() for char in data['name'])
-        if condition:
-            raise serializers.ValidationError({"name": "Windfarm name can not contain numbers."})
-        return data
+# TODO: add serializer required fields and 
+# validation that rise `serializers.ValidationError` on error
+# Write validation in validate function where name exists in `data['name']
+class WindFarmSerializer(serializers.ModelSerializer):
+    pass
+    # def validate(self, data):
 
 class WindFarmPingSerializer(serializers.ModelSerializer):
     wind_turbines = WindTurbineSerializer(read_only=True, many=True)
@@ -37,13 +34,3 @@ class WindFarmPingSerializer(serializers.ModelSerializer):
     class Meta:
         model = WindFarm
         fields = ["id", "name", "farm_type", "localisation", "wind_turbines"]
-
-    def validate(self, data):
-        """
-        Check that the name field is without numbers.
-        """
-        condition = any(char.isdigit() for char in data['name'])
-        if condition:
-            raise serializers.ValidationError({"name": "Windfarm name can not contain numbers."})
-        return data
-
