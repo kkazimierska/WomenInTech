@@ -21,7 +21,10 @@ Clone the repo
 ```
 git clone https://github.com/kkazimierska/WomenInTech.git
 ```
-
+If you already cloned, run
+```
+git pull
+```
 Start docker
 
 
