@@ -1,4 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientModule } from '@angular/common/http';
+
+import { TableModule } from 'primeng/table';
 
 import { WindTurbineListComponent } from './wind-turbine-list.component';
 
@@ -8,6 +11,7 @@ describe('WindTurbineListComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
+      imports: [HttpClientModule, TableModule],
       declarations: [WindTurbineListComponent]
     });
     fixture = TestBed.createComponent(WindTurbineListComponent);
