@@ -18,9 +18,9 @@
         </ng-template>
         <ng-template pTemplate="body" let-turbine>
             <tr>
-                <td>{{ turbine.id }}</td>
-                <td>{{ turbine.energy_produced }}</td>
-                <td>{{ turbine.working_time }}</td>
+                <td>'turbine id' </td>
+                <td>'turbine energy produced'</td>
+                <td>'turbine working time'</td>
                 <td>
                     <p-tag *ngIf="turbine.status == 'online'" severity="success" value="Online"></p-tag>
                     <p-tag *ngIf="turbine.status == 'offline'" severity="danger" value="Offline"></p-tag>
