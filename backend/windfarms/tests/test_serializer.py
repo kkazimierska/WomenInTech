@@ -1,4 +1,5 @@
 from django.test import TestCase
+from rest_framework import serializers
 from windfarms.serializer import WindFarmSerializer
 
 
@@ -17,4 +18,3 @@ class TestSerializer(TestCase):
 
         # with self.assertRaises(serializers.ValidationError):
         #    serializer.is_valid(raise_exception=True)
-		
