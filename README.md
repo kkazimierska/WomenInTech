@@ -1,17 +1,18 @@
-Install if you do not have Git
+Install Git
 
 ```
 https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 ```
 
+Install Docker
 Open Docker desktop if on Windows
-Zainstaluj, jesli nie masz  Docker
+
 
 ```
 https://docs.docker.com/desktop/install/ 
 ```
 
-Zainstaluj Visual Studio  Code, jesli nie masz
+Instal Visual Studio  Code
 ```
 https://code.visualstudio.com/download
 ```
