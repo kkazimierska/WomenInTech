@@ -53,9 +53,6 @@ docker compose exec web python backend/manage.py loaddata /app/backend/windfarms
 ```
 docker compose exec web python backend/manage.py loaddata /app/backend/windfarms/fixtures/windTurbines.json
 ```
-Go to MURAL to follow the workshop process
-
-https://app.mural.co/invitation/mural/womenintech6095/1683295253475?sender=ub9967f529429abe320475798&key=73c4c84e-1294-4867-925a-16a24b31b98a
 
 Close containers
 ```
