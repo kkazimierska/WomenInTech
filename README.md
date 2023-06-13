@@ -4,14 +4,14 @@ Install Git
 https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 ```
 
-Install Docker and Open Docker desktop if on Windows
+Install Docker and Open Docker desktop
 
 
 ```
 https://docs.docker.com/desktop/install/ 
 ```
 
-Instal Visual Studio  Code
+Instal Visual Studio Code
 ```
 https://code.visualstudio.com/download
 ```
@@ -25,7 +25,7 @@ If you already cloned, run
 ```
 git pull
 ```
-Start docker
+Start app with docker commands
 
 
 ```
