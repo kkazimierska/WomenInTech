@@ -1,17 +1,25 @@
-A model is the source of information about your data.
-Contains the fields of the data you’re storing.
-Each model maps to a database table.
-Django gives you an automatically-generated database-access API.
+## Instructions
 
-1. Open `backend\windfarms\models.py`
-2. Implement `WindTurbine`- model of the wind turbines.
+## Model maps to a db table
+A **model** is the source of information about your data.
+Contains the fields of the data you’re storing.
+Each model maps to a **database table**.
+Django gives you an **automatically-generated database-access API**.
+
 Fields are the only required part of a model – is the list of database fields it defines.
 Fields are specified by class `django.db.models.Model.` attributes.
+
+
+## Implement the model for turbines tables
+1. Open `backend\windfarms\models.py`
+2. Implement `WindTurbine`- model of the wind turbines.
 3. The `WindTurbine`- model should contain the following fields:
 - `host` as `GenericIPAddressField` attribute of `models` class with parameter `null=False`.
 - `energy_produced` as `IntegerField` attribute of `models` class with parameter `null=False`.
 - `working_time` as `IntegerField` attribute of `models` class with parameter `null=False`.
 - `windfarm` as `ForeignKey` attribute of `models` class.
+
+## ForeignKey and TextChoices fields.
 `ForeignKey` A many-to-one relationship.
 Requires two positional arguments: the class to which the model (`WindFarm`) is related
 and the `on_delete` option.
