@@ -4,7 +4,7 @@ WORKDIR /app
 ENV CHROME_BIN=/usr/bin/chromium-browser
 COPY package.json .
 RUN npm install -g @angular/cli
-RUN npm install
+RUN npm install --legacy-peer-deps
 
 COPY . ./app
 CMD ["ng", "serve", "--host", "0.0.0.0","--poll", "500"]
